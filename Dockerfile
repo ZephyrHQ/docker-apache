@@ -13,7 +13,7 @@ RUN apt-get update && apt-get  -y install apache2 apache2-mpm-worker libapache2-
 
 RUN echo Europe/Paris |  tee /etc/timezone &&  dpkg-reconfigure --frontend noninteractive tzdata
 
-RUN a2enmod rewrite proxy_fcgi actions
+RUN a2enmod rewrite proxy_fcgi actions ssl proxy proxy_balancer proxy_http
 RUN mkdir /cgi-bin
 
 ADD fastcgi.conf /etc/apache2/mods-available/
