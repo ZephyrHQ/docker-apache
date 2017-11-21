@@ -27,5 +27,5 @@ EXPOSE 80
 ADD entrypoint.sh /usr/bin/entrypoint.sh
 RUN chmod +x /usr/bin/entrypoint.sh
 
-ENTRYPOINT ["/usr/bin/entrypoint.sh"]
 CMD ["/usr/sbin/apache2", "-D", "FOREGROUND"]
+ENTRYPOINT ["/usr/bin/entrypoint.sh"]
