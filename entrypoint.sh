@@ -10,6 +10,8 @@ then
     sed -i -e "s/app\\\.php/app_dev\\\.php/g" /tmp/vhost.conf 
     sed -i -e "s/#ServerName/ServerName dev.zephyr-web.eu/g" /tmp/vhost.conf
     cat /tmp/vhost.conf > /etc/apache2/sites-available/vhost.conf
+else
+    cp /vhost.conf /etc/apache2/sites-available/vhost.conf
 fi
 
 echo Start apache
