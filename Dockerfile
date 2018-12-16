@@ -5,9 +5,8 @@ ENV APACHE_RUN_DIR=/usr/local/apache2/bin
 ENV PS1 '\u@\h:\w\$'
 
 COPY httpd.conf /usr/local/apache2/conf/httpd.conf
-COPY localhost.key.pem /etc/ssl/key.pem
-COPY localhost.cert.pem /etc/ssl/cert.pem
 COPY entrypoint.sh /usr/local/bin/entrypoint
+COPY vhost.conf /usr/local/apache2/conf/extra/httpd-vhosts.conf
 
 RUN chmod +x /usr/local/bin/entrypoint
 ENTRYPOINT ["entrypoint"]
